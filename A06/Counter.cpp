@@ -2,7 +2,7 @@
 Brent Laden
 Git:sora1441
 OOP 2143
-A05
+A06
 11-2-18
 */
 
@@ -94,8 +94,36 @@ public:
 			setTime(elapsed.asSeconds());
 		else if (startTime > endTime)
 			setTime(start.asSeconds() - elapsed.asSeconds() + 1);
-	}
+	//input:	color
+	//purpose:	changes color of font
+	void changeFontColor(sf::Color color) {
 
+		time.setFillColor(color);
+
+	}
+	//input:	size number
+	//purpose:	change size of text
+	void changeFontSize(int size) {
+
+		time.setCharacterSize(size);
+
+	}
+	//input:	color name
+	//purpose:	changes color of background rectangle
+	void changeBackgroundColor(sf::Color color) {
+
+		counterRectangle.setFillColor(color);
+
+	}
+	//input:	color name
+	//purpose:	changes the border color of background rectanglw
+	void changeBorderColor(sf::Color color) {
+
+		counterRectangle.setOutlineColor(color);
+
+	}
+	//input:	x position and y position
+	//purpose:	change location of clock
 	void changeClockPosition(float X, float Y) {
 		time.setPosition(sf::Vector2f(X, Y));
 		counterBackground.setPosition(sf::Vector2f(X, Y));
