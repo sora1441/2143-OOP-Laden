@@ -16,17 +16,17 @@ using namespace std;
 class Counter {
 	sf::Text time;			// contains time variables
 	sf::Clock clock;
+	sf::Time elapsed;		// time gone by
 	sf::Time start;
 	sf::Time end;
-	sf::Time elapsed;		// time gone by
 
 	int fontSize;
 	sf::Font font;			// font of clock
-	sf::Color fontColor;    // color of clock
+	sf::Color fontColor;   		// color of clock
 
-	sf::Vector2f clockLocation;		// location of clock
+	sf::Vector2f clockLocation;	// location of clock
 
-	sf::Color backgroundColor;         // background color
+	sf::Color backgroundColor;      // background rectangle color
 	sf::RectangleShape counterBackground; 
 
 public:
@@ -54,8 +54,8 @@ public:
 		time.setPosition(sf::Vector2f(300.f, 300.f));
 		changeClockPosition(300.0, 300.0);  //calls function to center clock
 	}
-
-	//turns int timer to string
+	//input:	number for the clock to start at
+	//purpose:	turns int timer  to string
 	void setTime(int timer) {
 		string txt = to_string(timer);
 		time.setString(txt);
